@@ -41,8 +41,8 @@ public class TestRouter extends EndpointRouteBuilder {
 
         from(direct("start"))
                 .setBody(constant(List.of("A", "B")))
-//                .to(direct("line"));
-                .toV(direct("line").getUri(), "mySend", "myReceive");
+                .to(direct("line"));
+//                .toV(direct("line").getUri(), "mySend", "myReceive");
 
         from("direct:line")
             .to("log:line")
